@@ -11,7 +11,7 @@ var io = require("socket.io")(server);
 server.listen(process.env.PORT || 8000);
 // server.listen(8000);
 
-var dt=["",""];
+var dt=["","","","",""];
 var Status;
 io.on("connection",function(socket){
 	socket.on("led_1",function(data){
@@ -22,6 +22,15 @@ io.on("connection",function(socket){
 		dt[1]=data;
 		io.sockets.emit("server_reply_2",dt[1]);
 	});
+	socket.on("fan_1",function(data){
+		dt[2]=data;
+		io.sockets.emit("server_reply_3",dt[2]);
+	});
+	socket.on("fan_2",function(data){
+		dt[3]=data;
+		io.sockets.emit("server_reply_4",dt[3]);
+	});
+
 	socket.on("Client_update_1_on",function(){
 		socket.broadcast.emit("server_reply_1","ON");
 	});
@@ -34,11 +43,23 @@ io.on("connection",function(socket){
 	socket.on("Client_update_2_off",function(){
 		socket.broadcast.emit("server_reply_2","OFF");
 	});
+	socket.on("Client_update_3_on",function(){
+		socket.broadcast.emit("server_reply_3","ON");
+	});
+	socket.on("Client_update_3_off",function(){
+		socket.broadcast.emit("server_reply_3","OFF");
+	});
+	socket.on("Client_update_4_on",function(){
+		socket.broadcast.emit("server_reply_4","ON");
+	});
+	socket.on("Client_update_4_off",function(){
+		socket.broadcast.emit("server_reply_4","OFF");
+	});
+	
 	socket.on("Update",function(){
 		io.sockets.emit("Update");
 	});
 });
-
 
 app.get("/",function(req,res){
 	res.render("trangchu",{
@@ -48,13 +69,13 @@ app.get("/",function(req,res){
 	});
 
 });
+// app.get("/:stt",function(req,res){
+// 	Status = req.params.stt;
+// 	if (Status=="1on"){
+// 		res.render("1on");
+// 	}
+// 	if (Status=="1off"){
+// 		res.render("1off");
+// 	}
+// });
 
-app.get("/:stt",function(req,res){
-	Status = req.params.stt;
-	if (Status=="1on"){
-		res.render("1on");
-	}
-	if (Status=="1off"){
-		res.render("1off");
-	}
-});

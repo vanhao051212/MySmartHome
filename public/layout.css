@@ -1,0 +1,51 @@
+body{
+    /* background-image: url(https://wallpaperset.com/w/full/c/2/6/468939.jpg); */
+    background-size: cover;
+    background-image: url(https://img95.699pic.com/photo/50058/9773.jpg_wh300.jpg!/format/webp);
+    background-color: #cccccc;
+
+}
+#title {
+    font-weight: bolder;
+    color: rgb(61, 148, 248);
+    padding: 10px 400px;
+}
+
+.form {
+    padding: 20px 300px;
+}
+.form_led_1{
+    padding: 12px 75px;
+    width: 200px;
+    float: left;
+}
+
+.form_led_2{
+    padding: 12px 65px;
+    width: 200px;
+    float: left;
+}
+.form_fan_1{
+    padding: 45px 70px;
+    width: 200px;
+    float: left;
+}
+.form_fan_2{
+    padding: 45px 15px;
+    width: 200px;
+    float: left;
+}
+
+.form form div h1{
+    font-weight: bolder;
+    color: rgb(255, 240, 37);
+}
+.form form div input{
+    ;
+}
+
+#form_get_stt{
+    padding: 10px 250px;
+    width: 200px;
+    float: left;
+}

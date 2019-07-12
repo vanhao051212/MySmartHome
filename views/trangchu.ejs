@@ -7,23 +7,43 @@
 	<script src="https://vanhao.herokuapp.com/socket.io/socket.io.js"></script>
 	<!-- <script src="socket.io/socket.io.js"></script> -->
 	<script src="process.js"></script>
+	<link rel="stylesheet" type="text/css" href="layout.css">
 
 </head>
 <body>
-	<h1>Chào mừng bạn đến với Smart Home</h1>
-	<form>
-		<input type="button" name="Led1on" value="Bật đèn 1" id="turn_on_led_1">
-		<input type="button" name="Led2on" value="Tắt đèn 1" id="turn_off_led_1">
-		<h1>Đèn 1: <span id ="stt_1"><%=dt1%></span></h1>
-		<input type="button" name="Led1off" value="Bật đèn 2" id="turn_on_led_2">
-		<input type="button" name="Led2off" value="Tắt đèn 2" id="turn_off_led_2">
-		<h1>Đèn 2: <span id ="stt_2"><%=dt2%></span></h1>
-		<input type="button" name="Getstt" value="Cập Nhật Tình Trạng" id="get_stt">
+	<h1 id="title">Chào mừng bạn đến với Smart Home</h1>
+	<div class="form">
+		<form>
+			<div class="form_led_1">
+					<h1 >Đèn 1: <span id ="stt_1"></span></h1>
+					<input type="button" name="Led1on" value="Bật đèn 1" id="turn_on_led_1">
+					<input type="button" name="Led2on" value="Tắt đèn 1" id="turn_off_led_1">
+			</div>
+			<div class="form_led_2">
+					<h1 >Đèn 2: <span id ="stt_2"></span></h1>
+					<input type="button" name="Led1off" value="Bật đèn 2" id="turn_on_led_2">
+					<input type="button" name="Led2off" value="Tắt đèn 2" id="turn_off_led_2">
+			</div>
+			<div class="form_fan_1">
+					<h1 >Quạt 1: <span id ="stt_3"></span></h1>
+					<input type="button" name="Led3on" value="Bật quạt 1" id="turn_on_fan_1">
+					<input type="button" name="Led4on" value="Tắt quạt 1" id="turn_off_fan_1">
+			</div>
+			<div class="form_fan_1">
+					<h1>Quạt 2: <span id ="stt_4"></span></h1>
+					<input type="button" name="Led3off" value="Bật quạt 2" id="turn_on_fan_2">
+					<input type="button" name="Led4off" value="Tắt quạt 2" id="turn_off_fan_2">
+			</div>
+		
+			<div id="form_get_stt">
+					<input type="button" name="Getstt" value="Cập Nhật Tình Trạng" id="get_stt">
+			</div>
+		
 
 	</form>
+
+	</div>
 	
 	
-
-
 </body>
 </html>
